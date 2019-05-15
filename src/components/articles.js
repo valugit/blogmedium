@@ -15,7 +15,10 @@ export default class Articles extends Component {
     return new Promise((resolve) => {
       fetch("http://blog.etherial.fr/articles")
       .then(result => result.json())
-      .then(json => this.setState({ articles: json.data }))
+      .then(json => {
+        this.setState({ articles: json.data })
+        return Promise.resolve(json)
+      })
     })
   }
 

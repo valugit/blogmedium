@@ -7,149 +7,176 @@
   color: #fff;
   text-decoration: none;
   list-style: none;
-  font-family: "Roboto", sans-serif;
-}
+  font-family: "Roboto", sans-serif; }
 
 body {
-  min-height: 100vh;
-}
+  min-height: 100vh; }
 
 body {
-  background-color: #282c34;
-}
+  background-color: #282c34; }
 
-body h1 {
-  color: #3bf498;
-}
+h1 {
+  color: #3bf498; }
 
-body .selected {
-  color: #3bf498;
-}
+.selected {
+  color: #3bf498; }
 
-body main {
-  width: 100%;
-}
+main {
+  width: 100%; }
 
-body main header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-  height: 10vh;
-}
+  height: 10vh; }
+  header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    header nav ul li {
+      margin-left: 25px; }
+      header nav ul li a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        header nav ul li a::before {
+          content: "";
+          transition: 0.2s ease;
+          position: absolute;
+          bottom: -3px;
+          height: 2px;
+          width: 0;
+          background: #3bf498; }
+        header nav ul li a:hover::before {
+          width: 100%; }
 
-body main header nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-body main header nav ul li {
-  margin-left: 25px;
-}
-
-body main header nav ul li a {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-body main header nav ul li a .underline {
-  transition: 0.2s ease;
-  position: absolute;
-  bottom: -3px;
-  height: 2px;
-  width: 0;
-  background: #3bf498;
-}
-
-body main header nav ul li a:hover .underline {
-  width: 100%;
-}
-
-body main section {
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 90vh;
-  width: 100%;
-}
+  width: 100%; }
 
-body main section h2 {
+h2 {
   font-size: 30px;
   border-bottom: 3px solid #3bf498;
-  margin-bottom: 1em;
-}
+  margin-bottom: 1em; }
 
-body main section .articles {
+.articles {
   width: 100%;
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
+  .articles ul {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 75%; }
+    .articles ul .home-article {
+      padding: 25px;
+      margin: 5px 0;
+      background-color: rgba(211, 211, 211, 0.1);
+      overflow: hidden;
+      backface-visibility: hidden;
+      position: relative;
+      transition: color 300ms;
+      transform: translateZ(0); }
+      .articles ul .home-article:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(59, 244, 152, 0.5);
+        transform: scale(0);
+        transition-property: transform;
+        transition: 300ms ease-out; }
+      .articles ul .home-article:hover:before {
+        transform: scale(2); }
 
-body main section .articles ul {
+.article .article-content {
   display: flex;
-  flex-direction: column-reverse;
-  width: 75%;
-}
-
-body main section .articles ul .home-article {
-  padding: 25px;
-  margin: 5px 0;
-  background-color: rgba(211, 211, 211, 0.1);
-  overflow: hidden;
-  backface-visibility: hidden;
-  position: relative;
-  transition: color 300ms;
-  transform: translateZ(0);
-}
-
-body main section .articles ul .home-article:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(59, 244, 152, 0.5);
-  transform: scale(0);
-  transition-property: transform;
-  transition: 300ms ease-out;
-}
-
-body main section .articles ul .home-article:hover:before {
-  transform: scale(2);
-}
-
-body main section.article .article-content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 75%;
   padding: 5em;
   text-align: center;
   line-height: 1.5em;
-  background-color: rgba(211, 211, 211, 0.1);
-}
-
-body main section.article a {
+  background-color: rgba(211, 211, 211, 0.1); }
+  .article .article-content .content {
+    margin-bottom: 5em; }
+  .article .article-content .author {
+    justify-self: end;
+    align-self: end; }
+    .article .article-content .author span {
+      color: #3bf498; }
+  .article .article-content time {
+    justify-self: end;
+    align-self: end; }
+.article a {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
-}
+  margin-top: 25px; }
+  .article a::before {
+    content: "";
+    transition: 0.2s ease;
+    position: absolute;
+    bottom: -3px;
+    height: 2px;
+    width: 0;
+    background: #3bf498; }
+  .article a:hover::before {
+    width: 100%; }
 
-body main section.article a::before {
-  content: "";
-  transition: 0.2s ease;
-  position: absolute;
-  bottom: -3px;
-  height: 2px;
-  width: 0;
-  background: #3bf498;
-}
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.1);
+  padding: 3em; }
+  .signin input {
+    border: 1px solid #fff;
+    margin: 10px;
+    width: 400px;
+    height: 30px;
+    padding: 10px; }
+    .signin input:focus {
+      border-color: #3bf498;
+      color: #3bf498; }
+  .signin button {
+    transition: .5s ease;
+    border: 1px solid #fff;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px; }
+    .signin button:hover {
+      cursor: pointer;
+      border-color: #3bf498;
+      color: #3bf498; }
 
-body main section.article a:hover::before {
-  width: 100%;
-}
+.signout {
+  cursor: pointer;
+  font-size: inherit;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .signout::before {
+    content: "";
+    transition: 0.2s ease;
+    position: absolute;
+    bottom: -3px;
+    height: 2px;
+    width: 0;
+    background: #3bf498; }
+  .signout:hover::before {
+    width: 100%; }
+
+/*# sourceMappingURL=App.css.map */

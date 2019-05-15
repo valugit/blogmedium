@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import { Link } from "react-router-dom"
+import Moment from "react-moment"
 
 export default class Article extends Component {
 
@@ -17,7 +18,10 @@ export default class Article extends Component {
     return new Promise((resolve) => {
       fetch(`http://blog.etherial.fr/articles/${  params.id }`)
       .then(result => result.json())
-      .then(json => this.setState({ article: json.data }))
+      .then(json => {
+        this.setState({ article: json.data })
+        return Promise.resolve(json)
+      })
     })
   }
 
@@ -34,11 +38,13 @@ export default class Article extends Component {
           <h2>{ article.title }</h2>
         </div>
         <div className="article-content">
-          <p>{ article.content }</p>
-          <p>{ article.User.firstname } { article.User.lastname }</p>
+          <p className="content">{ article.content }</p>
+          <p className="author">By <span>{ article.User.firstname } { article.User.lastname }</span></p>
+          { article.created_at !== article.updated_at ? <Moment date={ article.updated_at } format="[Last update:] dddd, MMM Do YYYY, [at] HH:mm"/> : <Moment date={ article.created_at } format="dddd, MMM Do YYYY, [at] HH:mm"/> } 
         </div>
+        
         <Link to="/">
-          Back to the Articles list
+          &#9665; Back to the Articles list
         </Link>
       </section>
     )

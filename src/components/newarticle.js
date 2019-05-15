@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 
-export default class SignUp extends Component {
+export default class NewArticle extends Component {
 	render() {
 		return (
       <section>
-        <h2>Sign Up</h2>
+        <h2>New Article</h2>
       </section>
 		)
 	}

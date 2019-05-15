@@ -2,132 +2,42 @@
 
 body {
   background-color: $anthracite;
+}
 
-  h1 {
-    color: $bleen;
-  }
+h1 {
+  color: $bleen;
+}
 
-  .selected {
-    color: $bleen;
-  }
+.selected {
+  color: $bleen;
+}
 
-  main {
-    width: 100%;
+main {
+  width: 100%;
+}
 
-    header {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  height: 10vh;
+
+  nav {
+    ul {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0px 20px;
-      height: 10vh;
 
-      nav {
-        ul {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          li {
-            margin-left: 25px;
-
-            a {
-              position: relative;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-
-              .underline {
-                transition: 0.2s ease;
-                position: absolute;
-                bottom: -3px;
-                height: 2px;
-                width: 0;
-                background: $bleen;
-              }
-
-              &:hover {
-                .underline {
-                  width: 100%;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 90vh;
-      width: 100%;
-
-      h2 {
-        font-size: 30px;
-        border-bottom: 3px solid $bleen;
-        margin-bottom: 1em;
-      }
-      
-      .articles {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        ul {
-          display: flex;
-          flex-direction: column-reverse;
-          width: 75%;
-  
-          .home-article {
-            padding: 25px;
-            margin: 5px 0;
-            background-color: rgba($color: lightgrey, $alpha: 0.1);
-            overflow: hidden;
-            backface-visibility: hidden;
-            position: relative;
-            transition: color 300ms;
-            transform: translateZ(0);
-
-            &:before {
-              content: "";
-              position: absolute;
-              z-index: -1;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background: rgba($color: $bleen, $alpha: 0.5);
-              transform: scale(0);
-              transition-property: transform;
-              transition: 300ms ease-out;
-            }
-
-            &:hover:before {
-              transform: scale(2);
-            }
-          }
-        }
-      }
-
-      &.article {
-
-        .article-content {
-          width: 75%;
-          padding: 5em;
-          text-align: center;
-          line-height: 1.5em;
-          background-color: rgba($color: lightgrey, $alpha: 0.1);
-        }
+      li {
+        margin-left: 25px;
 
         a {
           position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-top: 25px;
-  
+        
           &::before {
             content: "";
             transition: 0.2s ease;
@@ -137,12 +47,182 @@ body {
             width: 0;
             background: $bleen;
           }
-  
+        
           &:hover::before {
             width: 100%;
           }
         }
       }
     }
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  width: 100%;
+}
+
+h2 {
+  font-size: 30px;
+  border-bottom: 3px solid $bleen;
+  margin-bottom: 1em;
+}
+
+.articles {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 75%;
+
+    .home-article {
+      padding: 25px;
+      margin: 5px 0;
+      background-color: rgba($color: lightgrey, $alpha: 0.1);
+      overflow: hidden;
+      backface-visibility: hidden;
+      position: relative;
+      transition: color 300ms;
+      transform: translateZ(0);
+
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($color: $bleen, $alpha: 0.5);
+        transform: scale(0);
+        transition-property: transform;
+        transition: 300ms ease-out;
+      }
+
+      &:hover:before {
+        transform: scale(2);
+      }
+    }
+  }
+}
+
+.article {
+
+  .article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    padding: 5em;
+    text-align: center;
+    line-height: 1.5em;
+    background-color: rgba($color: lightgrey, $alpha: 0.1);
+
+    .content {
+      margin-bottom: 5em;
+    }
+
+    .author {
+      justify-self: end;
+      align-self: end;
+
+      span {
+        color: $bleen;
+      }
+    }
+    
+    time {
+      justify-self: end;
+      align-self: end;
+    }
+  }
+
+  a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+
+    &::before {
+      content: "";
+      transition: 0.2s ease;
+      position: absolute;
+      bottom: -3px;
+      height: 2px;
+      width: 0;
+      background: $bleen;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+}
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: lightgrey, $alpha: 0.1);
+  padding: 3em;
+
+  input {
+    border: 1px solid #fff;
+    margin: 10px;
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+
+    &:focus {
+      border-color: $bleen;
+      color: $bleen;
+    }
+  }
+
+  button {
+    transition: .5s ease;
+    border: 1px solid #fff;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+
+    &:hover {
+      cursor: pointer;
+      border-color: $bleen;
+      color: $bleen;
+    }
+  }
+}
+
+.signout {
+  cursor: pointer;
+  font-size: inherit;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    transition: 0.2s ease;
+    position: absolute;
+    bottom: -3px;
+    height: 2px;
+    width: 0;
+    background: $bleen;
+  }
+
+  &:hover::before {
+    width: 100%;
   }
 }
