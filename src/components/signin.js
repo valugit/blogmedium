@@ -34,6 +34,7 @@ export default class SignIn extends Component {
       .then(json => {
 				this.setToken(json.data.token)
 				this.props.history.replace('/')
+				resolve(json.data.token)
 			})
     })
 	}
