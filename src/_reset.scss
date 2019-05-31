@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 $bleen: #3bf498;
+$orange: #ff8000;
 $anthracite: #282c34;
+$crimson: #a20a44;
 
 * {
-  background: none;
-  margin: 0;
-  border: none;
-  padding: 0;
-  color: #fff;
-  text-decoration: none;
-  list-style: none;
-  font-family: "Roboto", sans-serif;
+	background: none;
+	margin: 0;
+	border: none;
+	padding: 0;
+	color: #fff;
+	text-decoration: none;
+	list-style: none;
+	font-family: "Roboto", "Sogoe UI Symbol", "Arial Unicode MS", sans-serif;
 }
 
 body {
-  min-height: 100vh;
+	min-height: 100vh;
+	background-color: $anthracite;
 }

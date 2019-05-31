@@ -7,12 +7,10 @@
   color: #fff;
   text-decoration: none;
   list-style: none;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", "Sogoe UI Symbol", "Arial Unicode MS", sans-serif; }
 
 body {
-  min-height: 100vh; }
-
-body {
+  min-height: 100vh;
   background-color: #282c34; }
 
 h1 {
@@ -24,12 +22,18 @@ h1 {
 main {
   width: 100%; }
 
+.success {
+  color: #3bf498; }
+
+.error {
+  color: #ff8000; }
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-  height: 10vh; }
+  height: 8vh; }
   header nav ul {
     display: flex;
     justify-content: space-between;
@@ -40,7 +44,8 @@ header {
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        font-size: 20px; }
         header nav ul li a::before {
           content: "";
           transition: 0.2s ease;
@@ -57,7 +62,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 84vh;
   width: 100%; }
 
 h2 {
@@ -72,7 +77,8 @@ h2 {
   .articles ul {
     display: flex;
     flex-direction: column-reverse;
-    width: 75%; }
+    width: 75%;
+    margin-bottom: 5%; }
     .articles ul .home-article {
       padding: 25px;
       margin: 5px 0;
@@ -117,6 +123,9 @@ h2 {
   .article .article-content time {
     justify-self: end;
     align-self: end; }
+  .article .article-content .category {
+    justify-self: end;
+    align-self: end; }
 .article a {
   position: relative;
   display: flex;
@@ -146,7 +155,8 @@ h2 {
     margin: 10px;
     width: 400px;
     height: 30px;
-    padding: 10px; }
+    padding: 10px;
+    font-size: 20px; }
     .signin input:focus {
       border-color: #3bf498;
       color: #3bf498; }
@@ -157,6 +167,34 @@ h2 {
     padding: 10px 20px;
     font-size: 20px; }
     .signin button:hover {
+      cursor: pointer;
+      border-color: #3bf498;
+      color: #3bf498; }
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.1);
+  padding: 3em; }
+  .signup input {
+    border: 1px solid #fff;
+    margin: 10px;
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    font-size: 20px; }
+    .signup input:focus {
+      border-color: #3bf498;
+      color: #3bf498; }
+  .signup button {
+    transition: .5s ease;
+    border: 1px solid #fff;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px; }
+    .signup button:hover {
       cursor: pointer;
       border-color: #3bf498;
       color: #3bf498; }
@@ -178,5 +216,114 @@ h2 {
     background: #3bf498; }
   .signout:hover::before {
     width: 100%; }
+
+.newarticle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.1);
+  padding: 3em; }
+  .newarticle input {
+    border: 1px solid #fff;
+    margin: 10px;
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    font-size: 20px; }
+    .newarticle input:focus {
+      border-color: #3bf498;
+      color: #3bf498; }
+  .newarticle textarea {
+    border: 1px solid #fff;
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    font-size: 20px; }
+    .newarticle textarea:focus {
+      border-color: #3bf498;
+      color: #3bf498; }
+  .newarticle select {
+    border: 1px solid #fff;
+    margin: 10px;
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    font-size: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none; }
+    .newarticle select:focus {
+      border-color: #3bf498;
+      color: #3bf498; }
+  .newarticle button {
+    transition: .5s ease;
+    border: 1px solid #fff;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 20px; }
+    .newarticle button:hover {
+      cursor: pointer;
+      border-color: #3bf498;
+      color: #3bf498; }
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.1);
+  padding: 3em;
+  margin-bottom: 2em; }
+  #profile img {
+    width: 100px;
+    margin-bottom: 30px; }
+  #profile > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; }
+  #profile .update {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #profile .update h3 {
+      text-transform: capitalize;
+      margin-top: 50px; }
+    #profile .update form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      #profile .update form input {
+        border: 1px solid #fff;
+        margin: 10px;
+        width: 400px;
+        height: 30px;
+        padding: 10px;
+        font-size: 20px; }
+        #profile .update form input:focus {
+          border-color: #3bf498;
+          color: #3bf498; }
+      #profile .update form button {
+        transition: .5s ease;
+        border: 1px solid #fff;
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 20px; }
+        #profile .update form button:hover {
+          cursor: pointer;
+          border-color: #3bf498;
+          color: #3bf498; }
+
+footer {
+  height: 8vh;
+  background-color: #3bf498;
+  display: flex;
+  align-items: center; }
+  footer span {
+    margin-left: 5%; }
 
 /*# sourceMappingURL=App.css.map */
