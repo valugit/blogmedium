@@ -26,7 +26,7 @@ export default class Profile extends Component {
 		})
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		return new Promise((resolve) => {
 			fetch('http://blog.etherial.fr/users/me', {
 				headers: { Authorization: 'Bearer ' + localStorage.getItem('id_token') }
@@ -37,14 +37,14 @@ export default class Profile extends Component {
 						profile: json.data,
 						firstname: json.data.firstname,
 						lastname: json.data.lastname,
-						birthdate: json.data.birthdate
+						birthdate: new Date(json.data.birthdate).toISOString()
 					})
 					return resolve(json)
 				})
 		})
 	}
 
-	updateInfo(event) {
+	updateInfo = (event) => {
 		event.preventDefault()
 
 		return new Promise((resolve) => {
@@ -66,6 +66,9 @@ export default class Profile extends Component {
 						infoStatus: 'success',
 						infoMessage: 'Informations successfully updated.'
 					})
+					setTimeout(() => {
+						window.location.reload()
+					}, 1000)
 					return resolve(json)
 				})
 				.catch((json) => {
@@ -78,7 +81,7 @@ export default class Profile extends Component {
 		})
 	}
 
-	updatePassword(event) {
+	updatePassword = (event) => {
 		event.preventDefault()
 
 		return new Promise((resolve) => {
@@ -100,6 +103,9 @@ export default class Profile extends Component {
 						pwdStatus: 'success',
 						pwdMessage: 'Password successfully updated.'
 					})
+					setTimeout(() => {
+						window.location.reload()
+					}, 1000)
 					return resolve(json)
 				})
 				.catch((json) => {
@@ -144,14 +150,12 @@ export default class Profile extends Component {
 							<input
 								type="text"
 								name="firstname"
-								value={profile.firstname}
 								placeholder="Firstname goes here..."
 								onChange={this.handleChange}
 							/>
 							<input
 								type="text"
 								name="lastname"
-								value={profile.lastname}
 								placeholder="Lastname goes here..."
 								onChange={this.handleChange}
 							/>

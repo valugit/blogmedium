@@ -224,6 +224,8 @@ h2 {
   align-items: center;
   background-color: rgba(211, 211, 211, 0.1);
   padding: 3em; }
+  .newarticle label {
+    font-size: 25px; }
   .newarticle input {
     border: 1px solid #fff;
     margin: 10px;
@@ -240,15 +242,17 @@ h2 {
     width: 400px;
     height: 400px;
     padding: 10px;
-    font-size: 20px; }
+    font-size: 20px;
+    resize: none;
+    overflow: auto; }
     .newarticle textarea:focus {
       border-color: #3bf498;
       color: #3bf498; }
   .newarticle select {
     border: 1px solid #fff;
     margin: 10px;
-    width: 400px;
-    height: 30px;
+    width: 420px;
+    height: 50px;
     padding: 10px;
     font-size: 20px;
     -moz-appearance: none;

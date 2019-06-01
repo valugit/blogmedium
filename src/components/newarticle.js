@@ -13,8 +13,8 @@ export default class NewArticle extends Component {
 		}
 	}
 
-	handleSubmit = (e) => {
-		e.preventDefault()
+	handleSubmit = (event) => {
+		event.preventDefault()
 
 		return new Promise((resolve) => {
 			fetch('http://blog.etherial.fr/articles', {
@@ -56,7 +56,7 @@ export default class NewArticle extends Component {
 		})
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		return new Promise((resolve) => {
 			fetch('http://blog.etherial.fr/articles/categories').then((response) => response.json()).then((json) => {
 				this.setState({ categories: json.data })
