@@ -256,7 +256,8 @@ h2 {
     padding: 10px;
     font-size: 20px;
     -moz-appearance: none;
-    -webkit-appearance: none; }
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px; }
     .newarticle select:focus {
       border-color: #3bf498;
       color: #3bf498; }

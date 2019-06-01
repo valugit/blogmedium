@@ -90,9 +90,10 @@ export default class NewArticle extends Component {
 						placeholder="Article's content goes here..."
 						onChange={this.handleChange}
 					/>
-					<label for="categories">Select a category</label>
 					<select id="categories" name="category" onChange={this.handleChange}>
-						<option value={null} />
+						<option value={null} className="placeholder" disabled selected hidden>
+							Select a category here...
+						</option>
 						{categories.map((category) => {
 							return <option value={category.id}>{category.name}</option>
 						})}
