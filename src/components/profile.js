@@ -99,6 +99,14 @@ export default class Profile extends Component {
 			})
 				.then((result) => result.json())
 				.then((json) => {
+					if (json.errors) {
+						this.setState({
+							pwdStatus: 'error',
+							pwdMessage: "Couldn't update password. Informations invalid."
+						})
+						return resolve(json)
+					}
+
 					this.setState({
 						pwdStatus: 'success',
 						pwdMessage: 'Password successfully updated.'
@@ -106,13 +114,6 @@ export default class Profile extends Component {
 					setTimeout(() => {
 						window.location.reload()
 					}, 1000)
-					return resolve(json)
-				})
-				.catch((json) => {
-					this.setState({
-						pwdStatus: 'error',
-						pwdMessage: "Couldn't update password. Informations invalid."
-					})
 					return resolve(json)
 				})
 		})

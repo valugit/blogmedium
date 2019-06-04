@@ -31,6 +31,14 @@ export default class NewArticle extends Component {
 			})
 				.then((result) => result.json())
 				.then((json) => {
+					if (json.errors) {
+						this.setState({
+							status: 'error',
+							message: 'Informations invalid or missing.'
+						})
+						return resolve(json)
+					}
+
 					this.setState({
 						status: 'success',
 						message: 'Article successfully created.'
@@ -39,13 +47,6 @@ export default class NewArticle extends Component {
 						this.props.history.replace('/')
 					}, 1000)
 					resolve(json.data)
-				})
-				.catch((json) => {
-					this.setState({
-						status: 'error',
-						message: 'Informations invalid or missing.'
-					})
-					resolve(json)
 				})
 		})
 	}
