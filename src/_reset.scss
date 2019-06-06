@@ -3,6 +3,7 @@
 $bleen: #3bf498;
 $orange: #ff8000;
 $anthracite: #282c34;
+$black: #1a1919;
 $crimson: #a20a44;
 
 * {
@@ -18,5 +19,5 @@ $crimson: #a20a44;
 
 body {
 	min-height: 100vh;
-	background-color: $anthracite;
+	background-color: $black;
 }
